@@ -17,7 +17,6 @@ public class PetShopController {
     @Autowired
     private PetShopService petShopService;
 
-    // Endpoint para salvar um novo PetShop
     @PostMapping
     public ResponseEntity<PetShopDTO> createPetShop(@RequestBody PetShopDTO petShopDTO) {
         try {
@@ -28,14 +27,12 @@ public class PetShopController {
         }
     }
 
-    // Endpoint para buscar todos os PetShops
     @GetMapping
     public ResponseEntity<List<PetShopDTO>> getAllPetShops() {
         List<PetShopDTO> petShops = petShopService.findAll();
         return new ResponseEntity<>(petShops, HttpStatus.OK);
     }
 
-    // Endpoint para buscar um PetShop por ID
     @GetMapping("/{id}")
     public ResponseEntity<PetShopDTO> getPetShopById(@PathVariable Long id) {
         PetShopDTO petShop = petShopService.findById(id);
@@ -46,4 +43,11 @@ public class PetShopController {
         }
     }
 
+    @GetMapping("/melhor-petshop")
+    public PetShopDTO calcularMelhorPetShop(
+        @RequestParam String data,
+        @RequestParam int qtdPequenos,
+        @RequestParam int qtdGrandes) {
+        return petShopService.calcularMelhorPetShop(data, qtdPequenos, qtdGrandes);
+    }
 }
