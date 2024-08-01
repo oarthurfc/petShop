@@ -1,17 +1,19 @@
 package com.oarthurfc.PetShopDTI.DTOs;
 
-import lombok.AllArgsConstructor;
+import com.oarthurfc.PetShopDTI.pricing.TipoAdicional;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class PetShopDTO {
     private String nome;
     private double distancia;
-    private double precoPequeno;
-    private double precoGrande;
-}
 
+    private double precoBasePequeno;
+    private double precoBaseGrande;
+
+    private double precoFinalPequeno; 
+    private double precoFinalGrande;   
+
+    private TipoAdicional tipoAdicional; 
+    private double adicional;     
+}
