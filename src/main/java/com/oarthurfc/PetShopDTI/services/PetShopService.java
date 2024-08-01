@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.oarthurfc.PetShopDTI.DTOs.PetShopDTO;
 import com.oarthurfc.PetShopDTI.models.PetShop;
-import com.oarthurfc.PetShopDTI.repository.PetShopRepository;
+import com.oarthurfc.PetShopDTI.repositories.PetShopRepository;
 
 import jakarta.transaction.Transactional;
 

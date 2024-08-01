@@ -1,4 +1,4 @@
-package com.oarthurfc.PetShopDTI.repository;
+package com.oarthurfc.PetShopDTI.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
