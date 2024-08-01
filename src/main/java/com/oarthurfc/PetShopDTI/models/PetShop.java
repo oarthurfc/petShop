@@ -8,13 +8,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "tb_petShop")
-@Getter
-@Setter
 public class PetShop {
     
     @Id
