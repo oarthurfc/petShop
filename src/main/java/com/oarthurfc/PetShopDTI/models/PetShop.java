@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PostLoad;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.Data;
@@ -26,29 +27,40 @@ public class PetShop {
     private double precoBasePequeno;
     private double precoBaseGrande;
 
+    private TipoAdicional tipoAdicional;
+    private double adicional;
+
     @Transient
     private PrecoStrategy precoStrategy;
 
-    private TipoAdicional tipoAdicional; 
-
-    private double adicional; 
-    
-    public PetShop() {}
+    public PetShop(){};
 
     public PetShop(String nome, double distancia, double precoBasePequeno, double precoBaseGrande,
-                   TipoAdicional tipoAdicional, double adicional) {
-        this.nome = nome;
-        this.distancia = distancia;
-        this.precoBasePequeno = precoBasePequeno;
-        this.precoBaseGrande = precoBaseGrande;
-        this.tipoAdicional = tipoAdicional;
-        this.adicional = adicional;
+                TipoAdicional tipoAdicional, double adicional) {
+    this.nome = nome;
+    this.distancia = distancia;
+    this.precoBasePequeno = precoBasePequeno;
+    this.precoBaseGrande = precoBaseGrande;
+    this.tipoAdicional = tipoAdicional;
+    this.adicional = adicional;
+    this.precoStrategy = tipoAdicional == TipoAdicional.PERCENTUAL
+        ? new PrecoPercentualStrategy(adicional)
+        : new PrecoFixoStrategy(adicional);
+    }
+
+
+    @PostLoad
+    private void postLoad() {
         this.precoStrategy = tipoAdicional == TipoAdicional.PERCENTUAL
             ? new PrecoPercentualStrategy(adicional)
             : new PrecoFixoStrategy(adicional);
     }
 
     public double calcularPreco(double precoBase, boolean fimDeSemana) {
+        if (precoStrategy == null) {
+            throw new IllegalStateException("PrecoStrategy não foi inicializado corretamente.");
+        }
         return precoStrategy.calcularPreco(precoBase, fimDeSemana);
     }
 }
+
