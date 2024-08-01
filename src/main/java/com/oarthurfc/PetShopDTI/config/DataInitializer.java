@@ -23,17 +23,17 @@ public class DataInitializer {
             PetShop caninoFeliz = new PetShop(
                 "Meu Canino Feliz",
                 2.0,
-                15.0, 
                 20.0, 
+                40.0, 
                 TipoAdicional.PERCENTUAL,
-                10.0 
+                0.2
             );
 
             PetShop vaiRex = new PetShop(
                 "Vai Rex",
                 1.7,
-                10.0, 
                 15.0, 
+                50.0, 
                 TipoAdicional.FIXO,
                 5.0 
             );
@@ -41,8 +41,8 @@ public class DataInitializer {
             PetShop chowChawgas = new PetShop(
                 "ChowChawgas",
                 0.8,
-                5.0,  
-                8.0,  
+                30.0,  
+                45.0,  
                 TipoAdicional.FIXO,
                 0.0 
             );
