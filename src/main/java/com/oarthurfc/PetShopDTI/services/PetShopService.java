@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.oarthurfc.PetShopDTI.DTOs.MelhorPetShopDTO;
 import com.oarthurfc.PetShopDTI.DTOs.PetShopDTO;
 import com.oarthurfc.PetShopDTI.models.PetShop;
 import com.oarthurfc.PetShopDTI.repositories.PetShopRepository;
@@ -74,13 +75,13 @@ public class PetShopService {
         return dto;
     }
 
-    public PetShopDTO calcularMelhorPetShop(String data, int qtdPequenos, int qtdGrandes) {
+    public MelhorPetShopDTO calcularMelhorPetShop(String data, int qtdPequenos, int qtdGrandes) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate date = LocalDate.parse(data, formatter);
 
         List<PetShop> petShops = petShopRepository.findAll();
 
-        return petShops.stream()
+        PetShopDTO melhorPetShopDTO = petShops.stream()
             .map(petShop -> {
                 PetShopDTO dto = convertToDTO(petShop, date);
                 double precoFinalPequeno = dto.getPrecoFinalPequeno() * qtdPequenos;
@@ -96,5 +97,7 @@ public class PetShopService {
             .min(Comparator.comparing(PetShopDTO::getPrecoTotal)
                 .thenComparing(PetShopDTO::getDistancia))
             .orElseThrow(() -> new RuntimeException("Nenhum PetShop encontrado"));
+
+        return new MelhorPetShopDTO(melhorPetShopDTO.getNome(), melhorPetShopDTO.getPrecoTotal());
     }
 }

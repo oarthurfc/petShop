@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.oarthurfc.PetShopDTI.DTOs.MelhorPetShopDTO;
 import com.oarthurfc.PetShopDTI.DTOs.PetShopDTO;
 import com.oarthurfc.PetShopDTI.services.PetShopService;
 
@@ -44,7 +45,7 @@ public class PetShopController {
     }
 
     @GetMapping("/melhor-petshop")
-    public PetShopDTO calcularMelhorPetShop(
+    public MelhorPetShopDTO calcularMelhorPetShop(
         @RequestParam String data,
         @RequestParam int qtdPequenos,
         @RequestParam int qtdGrandes) {
