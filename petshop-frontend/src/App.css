@@ -19,6 +19,11 @@
   flex-direction: column;
 }
 
+.input-content p {
+  color: #cbcbcb;
+  margin-left: 10px;
+}
+
 .box-num-caes {
   display: flex;
   align-items: center;
@@ -32,7 +37,8 @@
   background-color: black;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 5px 1em;
+  padding: 0 1em;
+  height: 48px;
 }
 
 .input-icon {
@@ -86,4 +92,37 @@
   text-align: center;
   border-radius: 1em;
   width: 80%;
+}
+
+#abrir-modal:hover{
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.241);
+  z-index: 999;
+  width: 100vw !important;
+  height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* centraliza o modal na tela */
+
+}
+
+.modal-data {
+  position: absolute;
+  background-color: #d7d7d7; /* mesma cor que você usou */
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* adiciona uma sombra para destacar o modal */
+  max-width: 500px; /* largura máxima do modal */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* centraliza o modal na tela */
+  z-index: 1000; /* garante que o modal fique acima de outros elementos */
+}
+
+.modal-close {
+  cursor: pointer;
 }
