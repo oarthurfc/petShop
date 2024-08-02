@@ -29,7 +29,7 @@ Este projeto é uma aplicação full-stack que permite aos usuários encontrar o
 ## Tecnologias Utilizadas
 
 - **Backend**:
-  - Java
+  - Java **21**
   - Spring Boot
   - MySQL
   - Maven
