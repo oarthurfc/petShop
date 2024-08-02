@@ -5,6 +5,7 @@ Este projeto é uma aplicação full-stack que permite aos usuários encontrar o
 ## Índice
 
 - [Funcionalidades](#funcionalidades)
+- [Requisitos](#requisitos)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Primeiros Passos](#primeiros-passos)
   - [Configuração do Backend](#configuração-do-backend)
@@ -25,6 +26,15 @@ Este projeto é uma aplicação full-stack que permite aos usuários encontrar o
   - Seletor de data para escolher a data.
   - Campos de formulário para o número de pets pequenos e grandes.
   - Exibe o nome do melhor pet shop e o custo total.
+ 
+## Requisitos
+
+Certifique-se de ter as seguintes dependências instaladas no seu ambiente:
+
+- Node.js (versão 16 ou superior)
+- npm (versão 7 ou superior)
+- Java **(versão 21)**
+- MySQL
 
 ## Tecnologias Utilizadas
 
