@@ -48,8 +48,6 @@ Certifique-se de ter as seguintes dependências instaladas no seu ambiente:
   - React
   - TypeScript
   - Vite
-  - Axios
-  - React-Day-Picker
   - CSS
 
 ## Primeiros Passos
@@ -121,7 +119,7 @@ Encontra o melhor pet shop com base na data selecionada e no número de pets.
 
 ## Decisões de Projeto
 
-- **Arquitetura MVC:** O projeto utiliza o padrão de arquitetura MVC (Model-View-Controller) para separar as responsabilidades e facilitar a manutenção e evolução do sistema.
+- **Arquitetura em camads:** O projeto utiliza o padrão de arquitetura em camadas para separar as responsabilidades e facilitar a manutenção e evolução do sistema.
 - **Princípios SOLID:** A aplicação foi desenvolvida seguindo os princípios SOLID para garantir um código mais modular, reutilizável e fácil de entender.
 - **Padrão Strategy:** Utilizado para calcular o preço final dos serviços, permitindo uma fácil extensão para diferentes tipos de cálculos de adicionais (fixo ou percentual).
 - **DTOs (Data Transfer Objects):** Utilizados para transferir dados entre o front-end e o back-end, garantindo que apenas as informações necessárias sejam enviadas.
