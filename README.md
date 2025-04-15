@@ -1,4 +1,4 @@
-# Projeto PetShopDTI
+# Projeto PetShop
 
 Este projeto é uma aplicação full-stack que permite aos usuários encontrarem o melhor pet shop para serviços de banho e tosa com base na data selecionada e no número de pets pequenos e grandes. O backend é construído com Java e Spring Boot, enquanto o frontend é desenvolvido usando React e TypeScript com Vite como ferramenta de build.
 
