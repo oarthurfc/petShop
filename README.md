@@ -1,6 +1,6 @@
 # Projeto PetShop
 
-Este projeto é uma aplicação full-stack que permite aos usuários encontrarem o melhor pet shop para serviços de banho e tosa com base na data selecionada e no número de pets pequenos e grandes. O backend é construído com Java e Spring Boot, enquanto o frontend é desenvolvido usando React e TypeScript com Vite como ferramenta de build.
+Este projeto é uma aplicação full-stack que permite aos usuários encontrarem o melhor pet shop para serviços de banho e tosa com base na data selecionada e no número de pets pequenos e grandes. O backend é construído com Java e Spring Boot, enquanto o frontend é desenvolvido usando React e TypeScript com Vite como ferramenta de build. O sistema foi desenvolvido utilizando boas práticas de desenvolvimento de software, como a adoção do pattern Strategy e o respeito aos princípios SOLID.
 
 ## Índice
 
@@ -119,7 +119,7 @@ Encontra o melhor pet shop com base na data selecionada e no número de pets.
 
 ## Decisões de Projeto
 
-- **Arquitetura em camads:** O projeto utiliza o padrão de arquitetura em camadas para separar as responsabilidades e facilitar a manutenção e evolução do sistema.
+- **Arquitetura em camadas:** O projeto utiliza o padrão de arquitetura em camadas para separar as responsabilidades e facilitar a manutenção e evolução do sistema.
 - **Princípios SOLID:** A aplicação foi desenvolvida seguindo os princípios SOLID para garantir um código mais modular, reutilizável e fácil de entender.
 - **Padrão Strategy:** Utilizado para calcular o preço final dos serviços, permitindo uma fácil extensão para diferentes tipos de cálculos de adicionais (fixo ou percentual).
 - **DTOs (Data Transfer Objects):** Utilizados para transferir dados entre o front-end e o back-end, garantindo que apenas as informações necessárias sejam enviadas.
